@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <title>kk誕</title>
+        <link rel="stylesheet" href="./css/reset.css" />
+        <link rel="stylesheet" href="./css/sample_top.css" />
+        <link rel="stylesheet" href="./css/sample_kktalk.css" />
+        <script
+            src="https://code.jquery.com/jquery-3.7.1.js"
+            integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+            crossorigin="anonymous"></script>
+        <script src="./script/sample.js"></script>
+    </head>
+    <body style="height: 100%">
+        <!-- キキトーク -->
+        <div id="overlay" class="overlay" onClick="closeKikiTalk()">
+            <div id="kikitalk" onclick="event.stopPropagation()">
+                <!-- バブリングの停止 -->
+                <div id="k_header">
+                    <div>🧸</div>
+                    <div>KikiTalk</div>
+                    <input
+                        type="button"
+                        id="kt_close"
+                        value="✕"
+                        onClick="closeKikiTalk()" />
+                </div>
+                <div id="k_main">
+                    <!-- エセサイドバー -->
+                    <div id="k_side">
+                        <div id="ks_member">🙎</div>
+                        <div id="ks_message">✉️</div>
+                    </div>
+                    <!-- パペット一覧 -->
+                    <ul id="k_list">
+                        <li id="kl_header">
+                            <div>未読メッセージ 99</div>
+                        </li>
+                        <!-- ここはループ -->
+                        <li class="kl_content">
+                            <div class="kl_icon"></div>
+                            <div class="kl_data">
+                                <div class="kl_name">パペット１</div>
+                                <div class="kl_message">キキ様ー</div>
+                            </div>
+                        </li>
+                        <li class="kl_content">
+                            <div class="kl_icon"></div>
+                            <div class="kl_data">
+                                <div class="kl_name">パペット２</div>
+                                <div class="kl_message">ｷｷﾁｬｰﾝ</div>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- メッセージ部 -->
+                    <div id="k_message">
+                        <div class="km_content">
+                            <div class="km_icon"></div>
+                            <div class="km_message">
+                                <div class="km_name">パペット１</div>
+                                <div class="km_data">キキ様ーー</div>
+                            </div>
+                        </div>
+                        <div class="km_content">
+                            <div class="km_icon_non"></div>
+                            <div class="km_message">
+                                <div class="km_name"></div>
+                                <div class="km_data">メッセージ２</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /キキトーク -->
+
+        <!-- ヘッダ部の飾り -->
+        <div id="header">
+            <div id="h_content1">
+                <div id="h1_lv">
+                    <span style="color: #ffde00">Lv</span>
+                    <span>99</span>
+                </div>
+                <div id="h1_name">
+                    <span>パペット</span>
+                    <div class="ex_meter"></div>
+                    <span style="color: #4bd3d9; font-size: 0.8vw"
+                        >599999/999999</span
+                    >
+                </div>
+            </div>
+            <div id="h_content2" style="width: 30%"></div>
+            <div id="h_content3" class="wcontent"></div>
+            <div id="h_content4" class="wcontent"></div>
+            <div id="h_content5" class="wcontent"></div>
+            <div id="h_content6" class="wcontent"></div>
+        </div>
+
+        <!-- メインコンテンツ -->
+        <div id="main">
+            <div id="kiki_talk">
+                <input
+                    type="button"
+                    id="kt"
+                    value="🧸"
+                    onClick="showKikiTalk()" />
+            </div>
+        </div>
+
+        <!-- フッタ部 -->
+        <div id="footer">
+            <input
+                type="button"
+                id="f_content1"
+                class="f_content"
+                value="イラスト" />
+            <input
+                type="button"
+                id="f_content2"
+                class="f_content"
+                value="アンケート" />
+            <input
+                type="button"
+                id="f_content3"
+                class="f_content"
+                value="ﾒｲ言集" />
+            <input
+                type="button"
+                id="f_content4"
+                class="f_content"
+                value="クレジット" />
+        </div>
+    </body>
+</html>
