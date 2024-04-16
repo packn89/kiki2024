@@ -4,6 +4,8 @@ var showKikiTalk = function () {
 
 var closeKikiTalk = function () {
     $(".overlay").fadeOut();
+    $("#k_message").addClass("km_hidden");
+    $(".kl_content").removeClass("selection");
 };
 
 $(function () {
@@ -12,6 +14,7 @@ $(function () {
         $(".kl_content").on("click", function () {
             $(this).siblings().removeClass("selection");
             $(this).addClass("selection");
+            $("#k_message").removeClass("km_hidden");
         });
     });
 });
