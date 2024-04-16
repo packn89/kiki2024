@@ -66,7 +66,7 @@ $(function () {
     $("#overlay").load("kiki_talk.html", function () {
         // パペリスト作成
         $.each(msgAry, function (index, value) {
-            let kcontent = "<li class='kl_content　klindex" + index +
+            let kcontent = "<li class='kl_content klindex" + index +
                 "'><div class='kl_icon'></div><div class='kl_data'><div class='kl_name klindex'>" +
                 value[0] + "</div> <div class='kl_message'>" +
                 value[1] + "</div></div ></li > ";
