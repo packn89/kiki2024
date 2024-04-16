@@ -46,7 +46,7 @@ function makeMessage(index) {
     if (data.length < 3) {
         return;
     }
-    for (i = 2; i < data.length + 1; i++) {
+    for (i = 2; i < data.length; i++) {
         let src = "<div class='km_content'>" +
             "    <div class='km_icon_non'></div>" +
             "    <div class='km_message'>" +
