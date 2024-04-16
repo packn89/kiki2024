@@ -75,7 +75,7 @@ $(function () {
         });
 
         // キキトーク読み込み後にonclickイベントを設定
-        $(".kl_content").on("click", function () {
+        $("#k_list").on("click", ".kl_content", function () {
             // スタイルの設定
             $(this).siblings().removeClass("selection");
             $(this).addClass("selection");
