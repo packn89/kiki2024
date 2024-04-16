@@ -66,7 +66,7 @@ $(function () {
     $("#overlay").load("kiki_talk.html", function () {
         // パペリスト作成
         $.each(msgAry, function (index, value) {
-            let kcontent = "<li class='kl_content klindex" + index +
+            let kcontent = "<li class='kl_content' data-index='" + index +
                 "'><div class='kl_icon'></div><div class='kl_data'><div class='kl_name klindex'>" +
                 value[0] + "</div> <div class='kl_message'>" +
                 value[1] + "</div></div ></li > ";
@@ -74,14 +74,12 @@ $(function () {
         });
 
         // キキトークのリストonClick処理
-        $(#k_list).on("click", ".kl_content", function () {
+        $("#k_list").on("click", ".kl_content", function () {
             // スタイルの設定
             $(this).siblings().removeClass("selection");
             $(this).addClass("selection");
             // メッセージ作成
-            let cName = $(this).attr("class");
-            let index = cName.substr(cName.indexOf('klindex') + 1);
-            makeMessage(index);
+            makeMessage($(this).data("index"));
         });
     });
 });
