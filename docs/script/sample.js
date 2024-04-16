@@ -64,7 +64,6 @@ $(function () {
 
     // キキトークの読み込み
     $("#overlay").load("kiki_talk.html", function () {
-
         // パペリスト作成
         $.each(msgAry, function (index, value) {
             let kcontent = "<li class='kl_content　klindex" + index +
@@ -74,15 +73,18 @@ $(function () {
             $("#k_list").append(kcontent);
         });
 
-        // キキトーク読み込み後にonclickイベントを設定
-        $("#k_list").on("click", ".kl_content", function () {
-            // スタイルの設定
-            $(this).siblings().removeClass("selection");
-            $(this).addClass("selection");
-            // メッセージ作成
-            let cName = $(this).attr("class");
-            let index = cName.substr(cName.indexOf('klindex') + 1);
-            makeMessage(index);
-        });
     });
+});
+
+/**
+ * キキトークのリストonClick処理
+ */
+$(document).on("click", ".kl_content", function () {
+    // スタイルの設定
+    $(this).siblings().removeClass("selection");
+    $(this).addClass("selection");
+    // メッセージ作成
+    let cName = $(this).attr("class");
+    let index = cName.substr(cName.indexOf('klindex') + 1);
+    makeMessage(index);
 });
