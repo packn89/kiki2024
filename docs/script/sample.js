@@ -4,7 +4,7 @@ var showKikiTalk = function () {
 
 var closeKikiTalk = function () {
     $(".overlay").fadeOut();
-    $("#k_message").addClass("km_hidden");
+    $("#k_message").empty();
     $(".kl_content").removeClass("selection");
 };
 
@@ -19,6 +19,45 @@ function parseCsv(data) {
     msgAry = $.csv.toArrays(data);
   }
 
+/**
+ * キキトークのメッセージ部作成
+ * @param index インデックス
+ */
+function makeMessage(index) {
+    // 表示中のメッセージを削除
+    $("#k_message").empty();
+
+    // 対象パペットデータ
+    let data = msgAry[index];
+    let name = data[0];
+
+    // 最初のメッセージ
+    let firstSrc = "<div class='km_content'>" +
+        "    <div class='km_icon' style='background-img: url(../data/img/'"  + name + ".jpg></div>" +
+        "    <div class='km_message'>" +
+        "    <div class='km_name'>" + name + "</div>" +
+        "    <div class='km_data'>" +
+        data[1] + "</div> " +
+        "    </div>" +
+        "</div>";
+    $("#k_message").append(firstSrc);
+
+    // 以降はあれば
+    if (data.length < 3) {
+        return;
+    }
+    for (i = 2; i < data.length + 1; i++) {
+        let src = "<div class='km_content'>" +
+            "    <div class='km_icon_non'></div>" +
+            "    <div class='km_message'>" +
+            "    <div class='km_name'></div>" +
+            "    <div class='km_data'>" +
+            data[i] + "</div>" +
+            "    </div>" +
+            "</div>";
+    }
+}
+
 $(function () {
     // CSVファイルの読み込み
     $.get("data/message/message.csv", parseCsv, "text");
@@ -28,7 +67,8 @@ $(function () {
 
         // パペリスト作成
         $.each(msgAry, function (index, value) {
-            let kcontent = "<li class='kl_content'><div class='kl_icon'></div><div class='kl_data'><div class='kl_name'>" +
+            let kcontent = "<li class='kl_content　klindex" + index +
+                "'><div class='kl_icon'></div><div class='kl_data'><div class='kl_name klindex'>" +
                 value[0] + "</div> <div class='kl_message'>" +
                 value[1] + "</div></div ></li > ";
             $("#k_list").append(kcontent);
@@ -36,9 +76,13 @@ $(function () {
 
         // キキトーク読み込み後にonclickイベントを設定
         $(".kl_content").on("click", function () {
+            // スタイルの設定
             $(this).siblings().removeClass("selection");
             $(this).addClass("selection");
-            $("#k_message").removeClass("km_hidden");
+            // メッセージ作成
+            let cName = $(this).attr("class");
+            let index = cName.substr(cName.indexOf('klindex') + 1);
+            makeMessage(index);
         });
     });
 });
