@@ -32,7 +32,7 @@ $(function () {
             let kcontent = "<li class='kl_content'><div class='kl_icon'></div><div class='kl_data'><div class='kl_name'>" +
                 value[0] + "</div> <div class='kl_message'>" +
                 value[1] + "</div></div ></li > ";
-            #("#k_list").append(kcontent);
+            $("#k_list").append(kcontent);
         }
 
         // キキトーク読み込み後にonclickイベントを設定
