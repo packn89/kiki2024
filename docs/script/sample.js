@@ -79,12 +79,13 @@ $(function () {
      * キキトークのリストonClick処理
      */
     $(document).on("click", ".kl_content", function () {
-        // スタイルの設定
-        $(this).siblings().removeClass("selection");
-        $(this).addClass("selection");
-        // メッセージ作成
-        let cName = $(this).attr("class");
-        let index = cName.substr(cName.indexOf('klindex') + 1);
-        makeMessage(index);
+        // // スタイルの設定
+        // $(this).siblings().removeClass("selection");
+        // $(this).addClass("selection");
+        // // メッセージ作成
+        // let cName = $(this).attr("class");
+        // let index = cName.substr(cName.indexOf('klindex') + 1);
+        // makeMessage(index);
+        alert("call!");
     });
 });
