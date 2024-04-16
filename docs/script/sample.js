@@ -8,8 +8,8 @@ var closeKikiTalk = function () {
     $(".kl_content").removeClass("selection");
 };
 
-/** メッセージ連想配列 */
-var msgAry = {};
+/** メッセージ配列 */
+var msgAry = [];
 
 /**
  * CSVを読んで配列に格納する
@@ -17,7 +17,7 @@ var msgAry = {};
 function parseCsv(data) {
     // csv配列を変数に格納
     var csv = $.csv.toArrays(data);
-    msgAry[csv[0]] = csv;
+    msgAry.push(csv);
   }
 
 $(function () {
