@@ -24,7 +24,17 @@ $(function () {
     // CSVファイルの読み込み
     $.get("data/message/message.csv", parseCsv, "text");
 
-    $("#overlay").load("kiki_talk.html", function() {
+    // キキトークの読み込み
+    $("#overlay").load("kiki_talk.html", function () {
+
+        // パペリスト作成
+        $.each(msgAry, function (index, value) {
+            let kcontent = "<li class='kl_content'><div class='kl_icon'></div><div class='kl_data'><div class='kl_name'>" +
+                value[0] + "</div> <div class='kl_message'>" +
+                value[1] + "</div></div ></li > ";
+            #("#k_list").append(kcontent);
+        }
+
         // キキトーク読み込み後にonclickイベントを設定
         $(".kl_content").on("click", function () {
             $(this).siblings().removeClass("selection");
@@ -33,4 +43,3 @@ $(function () {
         });
     });
 });
-
