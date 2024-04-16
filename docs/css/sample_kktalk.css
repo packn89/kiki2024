@@ -143,10 +143,6 @@
     padding: 2vh 0.5vw;
 }
 
-.km_hidden {
-    visibility: hidden;
-}
-
 .km_content {
     display: flex;
     flex-direction: row;
