@@ -33,7 +33,7 @@ function makeMessage(index) {
 
     // 最初のメッセージ
     let firstSrc = "<div class='km_content'>" +
-        "    <div class='km_icon' style='background-img: url(../data/img/'"  + name + ".jpg></div>" +
+        "    <div class='km_icon' style='background-img: url(data/img/"  + name + ".jpg);'></div>" +
         "    <div class='km_message'>" +
         "    <div class='km_name'>" + name + "</div>" +
         "    <div class='km_data'>" +
@@ -67,7 +67,7 @@ $(function () {
         // パペリスト作成
         $.each(msgAry, function (index, value) {
             let kcontent = "<li class='kl_content' data-index='" + index +
-                "'><div class='kl_icon'></div><div class='kl_data'><div class='kl_name klindex'>" +
+                "'><div class='kl_icon' style='background-img: url(data/img/" + value[0] + ".jpg);'></div><div class='kl_data'><div class='kl_name klindex'>" +
                 value[0] + "</div> <div class='kl_message'>" +
                 value[1] + "</div></div ></li > ";
             $("#k_list").append(kcontent);
