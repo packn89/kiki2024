@@ -8,6 +8,9 @@ var closeKikiTalk = function () {
 
 $(function () {
     $("#overlay").load("kiki_talk.html");
+});
+
+$(function () {
     $(".kl_content").on("click", function () {
         $(this).siblings().removeClass("selection");
         $(this).addClass("selection");
