@@ -16,8 +16,7 @@ var msgAry = [];
  */
 function parseCsv(data) {
     // csv配列を変数に格納
-    var csv = $.csv.toArrays(data);
-    msgAry.push(csv);
+    msgAry = $.csv.toArrays(data);
   }
 
 $(function () {
