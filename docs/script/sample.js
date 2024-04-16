@@ -22,7 +22,7 @@ function parseCsv(data) {
 
 $(function () {
     // CSVファイルの読み込み
-    $.get("data/message/packn.csv", parseCsv, "text");
+    $.get("data/message/message.csv", parseCsv, "text");
 
     $("#overlay").load("kiki_talk.html", function() {
         // キキトーク読み込み後にonclickイベントを設定
