@@ -2,8 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\docs",
+    "\\docs\\css",
+    "\\docs\\data",
+    "\\docs\\data\\img",
     "\\docs\\script"
   ],
-  "SelectedNode": "\\docs\\script\\sample.js",
+  "SelectedNode": "\\docs\\css\\sample_kktalk.css",
   "PreviewInSolutionExplorer": false
 }

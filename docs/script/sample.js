@@ -1,7 +1,13 @@
+/**
+ * キキトーク表示
+ */
 var showKikiTalk = function () {
     $(".overlay").addClass("show").fadeIn();
 };
 
+/**
+ * キキトーク閉じる
+ */
 var closeKikiTalk = function () {
     $(".overlay").fadeOut();
     $("#k_message").empty();
@@ -47,7 +53,7 @@ async function makeMessage(index) {
         return;
     }
     for (i = 2; i < data.length; i++) {
-        wait(1);
+        await wait(1.5);
         let src = "<div class='km_content'>" +
             "    <div class='km_icon_non'></div>" +
             "    <div class='km_message'>" +
@@ -86,6 +92,10 @@ $(function () {
     });
 });
 
+/**
+ * sleep関数
+ * @param second 秒数
+ */
 async function wait(second) {
     return new Promise(resolve => setTimeout(resolve, 1000 * second));
 }
