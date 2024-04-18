@@ -23,7 +23,7 @@ function parseCsv(data) {
  * キキトークのメッセージ部作成
  * @param index インデックス
  */
-function makeMessage(index) {
+async function makeMessage(index) {
     // 表示中のメッセージを削除
     $("#k_message").empty();
 
@@ -47,6 +47,7 @@ function makeMessage(index) {
         return;
     }
     for (i = 2; i < data.length; i++) {
+        wait(1);
         let src = "<div class='km_content'>" +
             "    <div class='km_icon_non'></div>" +
             "    <div class='km_message'>" +
@@ -84,3 +85,7 @@ $(function () {
         });
     });
 });
+
+async function wait(second) {
+    return new Promise(resolve => setTimeout(resolve, 1000 * second));
+}
