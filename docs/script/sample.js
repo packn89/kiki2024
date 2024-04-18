@@ -47,7 +47,7 @@ async function makeMessage(index) {
         return;
     }
     for (i = 2; i < data.length; i++) {
-        wait(1);
+        await wait(1);
         let src = "<div class='km_content'>" +
             "    <div class='km_icon_non'></div>" +
             "    <div class='km_message'>" +
