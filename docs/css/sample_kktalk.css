@@ -187,6 +187,7 @@
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
+    animation: fadeup 1s cubic-bezier(0.33, 1, 0.68, 1) forwards;
 }
 .km_data:after {
     border: solid transparent;
@@ -204,4 +205,17 @@
     border-right-color: #4c5a6f;
     right: 100%;
     top: 20px;
+}
+@keyframes fadeup {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
