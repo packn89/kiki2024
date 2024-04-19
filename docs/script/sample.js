@@ -16,6 +16,8 @@ var closeKikiTalk = function () {
 
 /** メッセージ配列 */
 var msgAry = [];
+/** 表示中メッセージ番号 */
+var dispMsgNum = "";
 
 /**
  * CSVを読んで配列に格納する
@@ -30,6 +32,8 @@ function parseCsv(data) {
  * @param index インデックス
  */
 async function makeMessage(index) {
+    // 表示中メッセージ番号を更新
+    dispMsgNum = index;
     // 表示中のメッセージを削除
     $("#k_message").empty();
 
@@ -54,6 +58,8 @@ async function makeMessage(index) {
     }
     for (i = 2; i < data.length; i++) {
         await wait(1.5);
+        // 表示中メッセージ番号が異なる場合は処理終了（割り込み検知）
+        if (dispMsgNum != index) return;
         let src = "<div class='km_content'>" +
             "    <div class='km_icon_non'></div>" +
             "    <div class='km_message'>" +
